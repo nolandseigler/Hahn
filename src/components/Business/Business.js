@@ -37,7 +37,5 @@ class Business extends React.Component {
     }
 }
 
-//tutorial way is below
-// export default Business;
-//below is my way
-module.exports = Business;
+
+export default Business;
