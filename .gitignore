@@ -24,4 +24,4 @@ yarn-error.log*
 
 .idea/*
 *.iml
-keys.js
+src/keys.js
