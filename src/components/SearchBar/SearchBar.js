@@ -12,6 +12,7 @@ class SearchBar extends React.Component {
         super(props);
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
         this.state = {
             term: '',
             location: '',
@@ -41,6 +42,10 @@ class SearchBar extends React.Component {
             location: e.target.value
         });
     }
+    handleSearch(e) {
+        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+        e.preventDefault();
+    }
     //future proof for possible changes in Yelp API
     renderSortByOptions() {
         return Object
@@ -65,7 +70,7 @@ class SearchBar extends React.Component {
                     <input onChange={this.handleLocationChange} placeholder="Where?"/>
                 </div>
                 <div className="SearchBar-submit">
-                    <a>Let's Go</a>
+                    <a onClick={this.handleSearch}>Let's Go</a>
                 </div>
             </div>
         );
